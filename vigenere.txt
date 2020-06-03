@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <string.h>
+int main()
+{
+    char text[100];
+    char key[100]; 
+    char matrix[26][26];
+    char c;
+    char d='A';
+    int i,j,f=0,s1,s2;
+    printf("enter the plain text:-");
+    gets(text);
+    printf("enter the key:-");
+    gets(key);
+    
+    for(i=0;i<26;i++)
+    {
+        c=d+i;
+        
+        for(j=0;j<26;j++)
+        {
+            if(c>'Z')
+            c='A';
+            matrix[i][j]=c;
+            
+   
+            c=c+1;
+            
+        }
+
+    }
+   printf("decrypted text is:-");
+    int l1=strlen(text);
+    int l2=strlen(key);
+    
+    for(i=0;i<l1;i++)
+    {
+        if(f>=l2)
+        f=0;
+        s1=text[i]-65;
+        s2=key[f]-65;
+        
+    printf("%c",matrix[s1][s2]);
+        f++;
+        
+    }
+    
+    }
